@@ -1,0 +1,23 @@
+### Enviar ruta 
+POST http://127.0.0.1:3000/auth/register
+Content-Type: application/json
+
+{
+    "name":"prueba",
+    "email": "Dm@gmail.com",
+    "password": "123456"
+}
+### Probamos el login
+
+POST http://127.0.0.1:3000/auth/login
+Content-Type: application/json
+
+{
+    "name":"prueba",
+    "email": "Dm@gmail.com",
+    "password": "123456"
+}
+
+### muestra a todos los usuarios 
+GET http://127.0.0.1:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE3ODE3MjE1MTEsImV4cCI6MTc4MTcyMTU0MX0.x7ycsGs3neaAkmEOjSu3S2xS2nxAQEdjai9sykDkQLk
