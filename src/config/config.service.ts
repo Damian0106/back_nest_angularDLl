@@ -8,7 +8,7 @@ export class ConfigService {
     constructor(){
         const isDevelopmentEnv =process.env.NODE_ENV !=='production'
         if(isDevelopmentEnv){
-            const envFilePath= __dirname +'/../../.env.development'
+            const envFilePath= __dirname +'/../../../.env.development'
             const existsPath= fs.existsSync(envFilePath)
             if(!existsPath){
                 console.log('.env.development no existe DEVELOPMENT')
