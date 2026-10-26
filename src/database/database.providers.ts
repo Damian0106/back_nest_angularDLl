@@ -1,5 +1,5 @@
 
-import { ConfigService } from "src/config/config.service";
+import { ConfigService } from "../config/config.service";
 import { DataSource } from "typeorm"
 export const databaseProviders=[
     {
