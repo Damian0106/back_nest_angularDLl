@@ -6,6 +6,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  //habilitamos CORS
+  app.enableCors();
 
   // Validación global de DTOs
   app.useGlobalPipes(new ValidationPipe());
