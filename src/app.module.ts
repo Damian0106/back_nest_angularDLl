@@ -6,9 +6,10 @@ import { UsersModule } from './modules/users/users.module';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from './config/config.module';
 import { ObjetoPerdidoModule } from './modules/objeto-perdido/objeto-perdido.module';
+import { ObjetoEncontradoModule } from './modules/objeto-encontrado/objeto-encontrado.module';
 
 @Module({
-  imports: [AuthModule, UsersModule, DatabaseModule, ConfigModule, ObjetoPerdidoModule],
+  imports: [AuthModule, UsersModule, DatabaseModule, ConfigModule, ObjetoPerdidoModule, ObjetoEncontradoModule],
   controllers: [AppController],
   providers: [AppService],
 })

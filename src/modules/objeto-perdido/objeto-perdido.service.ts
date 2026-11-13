@@ -18,18 +18,23 @@ export class ObjetoPerdidoService {
   }
 
   async findAll() {
-    return await this.objetoPerdidoRepository.find();
+    return await this.objetoPerdidoRepository.find({order:{ id:'asc'}});
+
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} objetoPerdido`;
+  async findOne(id: number) {
+    return await this.objetoPerdidoRepository.findOne({
+      where: {
+        id:id
+      }
+    });
   }
 
-  update(id: number, updateObjetoPerdidoDto: UpdateObjetoPerdidoDto) {
-    return `This action updates a #${id} objetoPerdido`;
+  async update(id: number, updateObjetoPerdidoDto: UpdateObjetoPerdidoDto) {
+    return await this.objetoPerdidoRepository.update(id, updateObjetoPerdidoDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} objetoPerdido`;
+  async remove(id: number) {
+    return await this.objetoPerdidoRepository.delete(id);
   }
 }
