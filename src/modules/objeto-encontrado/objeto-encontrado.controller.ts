@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ObjetoEncontradoService } from './objeto-encontrado.service';
 import { CreateObjetoEncontradoDto } from './dto/create-objeto-encontrado.dto';
 import { UpdateObjetoEncontradoDto } from './dto/update-objeto-encontrado.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('objeto-encontrado')
 @Controller('objeto-encontrado')
 export class ObjetoEncontradoController {
   constructor(private readonly objetoEncontradoService: ObjetoEncontradoService) {}

@@ -14,10 +14,11 @@ async function bootstrap() {
 
   // Configuración de Swagger
   const config = new DocumentBuilder()
-    .setTitle('Backend NestJS')
-    .setDescription('Documentación de la API')
-    .setVersion('1.0')
     .addBearerAuth()
+    .setTitle('Backend API Nest')
+    .setDescription('Backend API Nest')
+    .setVersion('1.0')
+    .addTag('Api Rest')
     .build();
 
   // Generar la documentación de la API

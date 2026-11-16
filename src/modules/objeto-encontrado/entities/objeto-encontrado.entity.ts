@@ -1,17 +1,29 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ObjetoPerdido } from "../../objeto-perdido/entities/objeto-perdido.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class ObjetoEncontrado {
     @PrimaryGeneratedColumn()
     id!:number;
-    @Column()
+
+    @Column({type:'varchar', length:250})
     nombre!:string;
-    @Column({nullable:true})
-    imagen!:string;
-    @Column()
+
+    @Column({type:'varchar', length:250})
     lugar!:string;
-    @Column({default:1})
+
+    @Column({type:'int', default:1})
     cantidad!:number;
-    @Column({default:'ENCONTRADO'})
+
+    @Column({type:'varchar', length:250, nullable:true})
+    imagen!:string;
+
+    @Column({type:'text', nullable:true})
+    descripcion!:string;
+
+    @Column({type:'varchar', length:50, default:'ENCONTRADO'})
     estado!:string;
+
+    @ManyToOne(()=>ObjetoPerdido, (obj)=>obj.objetosEncontrados)
+    objetoPerdido!:ObjetoPerdido;
 }
